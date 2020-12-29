@@ -28,17 +28,20 @@ class AppsRestHandler extends SimpleRest {
 
 		$requestContentType = $_SERVER['HTTP_ACCEPT'];
 		$this ->setHttpHeaders($requestContentType, $statusCode);
-				
-		if(strpos($requestContentType,'application/json') !== false){
-			$response = $this->encodeJson($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'text/html') !== false){
+                
+                switch ($requestContentType) {
+                    case 'application/json':
+                        $response = $this->encodeJson($rawData);
+			break;
+                    case 'application/xml':
+                        $response = $this->encodeXml($rawData);
+                        break;
+                    default:
+                        // 'text/html'
 			$response = $this->encodeHtml($rawData);
-			echo $response;
-		} else if(strpos($requestContentType,'application/xml') !== false){
-			$response = $this->encodeXml($rawData);
-			echo $response;
-		}
+                        break;
+                }
+                echo $response;
 	}
 	
         function getApp($name) {

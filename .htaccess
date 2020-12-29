@@ -3,5 +3,5 @@
 RewriteEngine on
 
 # map neat URL to internal URL
-RewriteRule ^subdomain/list/$   RestController.php?view=all [nc,qsa]
-RewriteRule ^subdomain/show/(.*)/$   RestController.php?view=single&name=$1 [nc,qsa]
+RewriteRule ^subdomains/$   RestController.php?view=all [nc,qsa]
+RewriteRule ^subdomains/(.*)/$   RestController.php?view=single&name=$1 [nc,qsa]

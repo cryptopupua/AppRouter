@@ -10,13 +10,13 @@ URL mapping
 switch($view){
 
 	case "all":
-		// to handle REST Url /subdomain/list/
+		// to handle REST Url /subdomains
 		$appsRestHandler = new AppsRestHandler();
 		$appsRestHandler->getAllApps();
 		break;
 		
 	case "single":
-		// to handle REST Url /subdomain/show/<id>/
+		// to handle REST Url /subdomains/<id>/
 		$appsRestHandler = new AppsRestHandler();
 		$appsRestHandler->getApp($_GET["name"]);
 		break;
