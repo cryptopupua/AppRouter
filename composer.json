@@ -1,0 +1,14 @@
+{
+    "name": "cryptopup/app-router",
+    "description": "Application for show subdomain apps",
+    "type": "library",
+    "require": {
+        "btcrelax/bitganj-core": "1.0.1"
+    },
+    "authors": [
+        {
+            "name": "godJah",
+            "email": "43356590+stgodjah@users.noreply.github.com"
+        }
+    ]
+}
