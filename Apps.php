@@ -16,8 +16,10 @@ class Apps {
            $rawdata = Common::readDirectory(BASE_PATH);
            $server_name = \filter_input( INPUT_SERVER,"SERVER_NAME");
            foreach ($rawdata as $value){
-               $this->apps += [$value => \sprintf("http://%s.%s",  $value , $server_name ) ]; 
-           } 
+               if ($value[0] !== '.') {
+                    $this->apps += [$value => \sprintf("http://%s.%s",  $value , $server_name ) ];   
+               }
+            } 
        }
         
 	public function getAllApps(){
